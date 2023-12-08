@@ -8,30 +8,36 @@ wc = fc*2*pi;
 num = wc*Ts;
 den = [1,-exp(-wc*Ts)];
 
-% Calculate the frequency response
 f = linspace(0.1, 1000, 1000);
 H = freqz(num, den, 2*pi*f/Fs);
 
 magnitude_dB = 20*log10(abs(H));
 
-% Plot the magnitude response using a linear scale
+
 figure;
-subplot(2,1,1);
 semilogx(f, magnitude_dB);
-title('Filter Frequency Response');
+title('Resposta em frequência do filtro digital - Fc = 100Hz');
 xlabel('Frequência (Hz)');
 ylabel('Magnitude (dB)');
 grid on;
 
-% Plot the phase response using semilogx
-subplot(2,1,2);
-semilogx(f, angle(H));
-title('Filter Phase Response');
-xlabel('Frequência (Hz)');
-ylabel('Fase (radianos)');
-grid on;
 
-
-
+% figure;
+% subplot(2,1,1);
+% semilogx(f, magnitude_dB);
+% title('Resposta em frequência do filtro digital - Fc = 100Hz');
+% xlabel('Frequência (Hz)');
+% ylabel('Magnitude (dB)');
+% grid on;
+% 
+% subplot(2,1,2);
+% semilogx(f, angle(H));
+% title('Resposta em fase do filtro digital');
+% xlabel('Frequência (Hz)');
+% ylabel('Fase (radianos)');
+% grid on;
+% 
+% 
+% 
 
  

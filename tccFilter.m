@@ -12,7 +12,7 @@ for(i=aux(1):aux(2))
     end
 end
 
-voutMax = max(y(100:size(y,2)));
+voutMax = max(y(200:size(y,2)));
 atenuation = calculateDBratio(1,voutMax);
 
 end
