@@ -20,11 +20,39 @@ for i = freq_resp_min:freq_resp_step:freq_resp_max
     freq_resp(counter) = atenuation;
 end
 
-semilogx(freq_resp_min:freq_resp_step:freq_resp_max,freq_resp)
-title('Resposta em frequência do filtro de primeira ordem - Simulação por equação de diferenças - Fc = 100Hz')
+semilogx(freq_resp_min:freq_resp_step:freq_resp_max,freq_resp,'LineWidth', 2, 'DisplayName', 'SIMULAÇÃO')
+title('Resposta em frequência do filtro de primeira ordem - Fc = 100Hz')
 grid on
-xlabel('Frequencia (Hz)');
+xlabel('Frequência (Hz)');
 ylabel('Ganho (dB)');
+hold on
+
+resultsx(1) = 5;
+resultsy(1) = 0;
+
+resultsx(2) = 10;
+resultsy(2) = 0;
+
+resultsx(3) = 25;
+resultsy(3) = -0.1346;
+
+resultsx(4) = 50;
+resultsy(4) = -0.989;
+
+resultsx(5) = 75;
+resultsy(5) = -2,278;
+
+resultsx(6) = 100;
+resultsy(6) = -3.793;
+
+resultsx(7) = 200;
+resultsy(7) = -9.409;
+
+resultsx(8) = 300;
+resultsy(8) = -14.674;
+semilogx(resultsx,resultsy,'LineWidth', 2, 'DisplayName', 'IMPLEMENTAÇÃO')
+legend('show');
+
 
 % 
 % figure 

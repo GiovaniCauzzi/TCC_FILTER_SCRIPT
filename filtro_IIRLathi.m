@@ -15,7 +15,7 @@ magnitude_dB = 20*log10(abs(H));
 
 
 figure;
-semilogx(f, magnitude_dB);
+semilogx(f, magnitude_dB,'LineWidth', 2);
 title('Resposta em frequência do filtro digital - Fc = 100Hz');
 xlabel('Frequência (Hz)');
 ylabel('Magnitude (dB)');
